@@ -307,10 +307,12 @@ int main(void)
 				hiba=1;
 				can_tx_data[0]=poz1  | gyerek_zar<<7;
 				can_tx_data[1]=cnt_4bit;
-				can_tx_data[2]=hiba;
+				
+				uint8_t can_tx_data2;
+				can_tx_data2=hiba;
 				
 				//CAN_SendMob(1,0x1FFFFFFF,TRUE,2,can_tx_data);
-				CAN_SendMob(1,0x100,FALSE,1,&can_tx_data);
+				CAN_SendMob(1,0x100,FALSE,1,&can_tx_data2);
 				CAN_SendMob(2,0x55,FALSE,2,&can_tx_data);
 				
 				
